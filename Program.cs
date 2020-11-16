@@ -62,7 +62,7 @@ namespace GuessingGame
     2) Medium - this gives the user six guesses
     3) Hard - this gives the user four guesses
     4) Unlimited Tries
-    Default is 8 Tries
+    Default is Unlimited
         ");
       string level = Console.ReadLine();
       switch (level)
@@ -71,7 +71,7 @@ namespace GuessingGame
         case "2": return 6;
         case "3": return 4;
         case "4": return 0;
-        default: return 8;
+        default: return 0;
       }
     }
   }
