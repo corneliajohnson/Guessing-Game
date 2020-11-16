@@ -68,12 +68,13 @@ namespace GuessingGame
     static int Difficulty()
     {
       Console.WriteLine(@"
-             Difficulty Level
-             Enter 1, 2, 3, 4
-             1) Easy - this gives the user eight guesses
-             2) Medium - this gives the user six guesses
-             3) Hard - this gives the user four guesses
-             4) Unlimited Tries
+    Difficulty Level
+    Enter 1, 2, 3, 4
+    1) Easy - this gives the user eight guesses
+    2) Medium - this gives the user six guesses
+    3) Hard - this gives the user four guesses
+    4) Unlimited Tries
+    Default is 8 Tries
         ");
       string level = Console.ReadLine();
       switch (level)
