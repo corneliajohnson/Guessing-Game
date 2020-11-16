@@ -13,8 +13,9 @@ namespace GuessingGame
     {
       int sercetNumber = RandomNumber();
       int tries = 0;
-      //Give the user four chances to guess the number.
-      while (tries < 4)
+      //set difficulty.
+      int difficultyLevel = Difficulty();
+      while (tries < difficultyLevel)
       {
         tries++;
         Console.Write($"Guess a number a number (Your guess {tries}): ");
@@ -49,6 +50,25 @@ namespace GuessingGame
       Random randomNum = new Random();
       int generateRandomNum = randomNum.Next(1, 100);
       return generateRandomNum;
+    }
+
+    static int Difficulty()
+    {
+      Console.WriteLine(@"
+             Difficulty Level
+             Enter 1, 2 or 3
+             1) Easy - this gives the user eight guesses
+             2) Medium - this gives the user six guesses
+             3) Hard - this gives the user four guesses
+        ");
+      string level = Console.ReadLine();
+      switch (level)
+      {
+        case "1": return 8;
+        case "2": return 6;
+        case "3": return 4;
+        default: return 8;
+      }
     }
   }
 }
