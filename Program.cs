@@ -15,12 +15,25 @@ namespace GuessingGame
       int tries = 0;
       //set difficulty.
       int difficultyLevel = Difficulty();
-      while (tries < difficultyLevel)
+      if (difficultyLevel == 0)
       {
-        tries++;
-        Console.Write($"Guess a number a number (Your guess {tries}): ");
-        string userGuess = Console.ReadLine();
-        CheckGuess(sercetNumber, userGuess);
+        while (difficultyLevel == 0)
+        {
+          tries++;
+          Console.Write($"Guess a number a number (Your guess {tries}): ");
+          string userGuess = Console.ReadLine();
+          CheckGuess(sercetNumber, userGuess);
+        }
+      }
+      else
+      {
+        while (tries < difficultyLevel)
+        {
+          tries++;
+          Console.Write($"Guess a number a number (Your guess {tries}): ");
+          string userGuess = Console.ReadLine();
+          CheckGuess(sercetNumber, userGuess);
+        }
       }
     }
 
@@ -56,10 +69,11 @@ namespace GuessingGame
     {
       Console.WriteLine(@"
              Difficulty Level
-             Enter 1, 2 or 3
+             Enter 1, 2, 3, 4
              1) Easy - this gives the user eight guesses
              2) Medium - this gives the user six guesses
              3) Hard - this gives the user four guesses
+             4) Unlimited Tries
         ");
       string level = Console.ReadLine();
       switch (level)
@@ -67,6 +81,7 @@ namespace GuessingGame
         case "1": return 8;
         case "2": return 6;
         case "3": return 4;
+        case "4": return 0;
         default: return 8;
       }
     }
