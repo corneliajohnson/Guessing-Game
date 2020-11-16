@@ -61,7 +61,7 @@ namespace GuessingGame
     static int RandomNumber()
     {
       Random randomNum = new Random();
-      int generateRandomNum = randomNum.Next(1, 100);
+      int generateRandomNum = randomNum.Next(1, 101);
       return generateRandomNum;
     }
 
