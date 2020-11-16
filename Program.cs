@@ -11,7 +11,7 @@ namespace GuessingGame
 
     static void AskUser()
     {
-      int sercetNumber = 42;
+      int sercetNumber = RandomNumber();
       int tries = 0;
       //Give the user four chances to guess the number.
       while (tries < 4)
@@ -33,8 +33,22 @@ namespace GuessingGame
       }
       else
       {
-        Console.WriteLine("WRONG");
+        if (userNumInt > secrectNum)
+        {
+          Console.WriteLine("WRONG: You guessed too high");
+        }
+        else
+        {
+          Console.WriteLine("WRONG: You guessed too low");
+        }
       }
+    }
+
+    static int RandomNumber()
+    {
+      Random randomNum = new Random();
+      int generateRandomNum = randomNum.Next(1, 100);
+      return generateRandomNum;
     }
   }
 }
