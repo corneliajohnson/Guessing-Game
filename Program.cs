@@ -6,9 +6,23 @@ namespace GuessingGame
   {
     static void Main(string[] args)
     {
+      int sercetNumber = 42;
       Console.Write("Guess a number a number: ");
       string userGuess = Console.ReadLine();
-      Console.WriteLine($"User guess is {userGuess}");
+      CheckGuess(sercetNumber, userGuess);
+    }
+
+    static void CheckGuess(int secrectNum, string userNum)
+    {
+      int userNumInt = int.Parse(userNum);
+      if (userNumInt == secrectNum)
+      {
+        Console.WriteLine("You Guessed RIGHT");
+      }
+      else
+      {
+        Console.WriteLine("WRONG");
+      }
     }
   }
 }
