@@ -2,11 +2,13 @@
 
 namespace GuessingGame
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+      Console.Write("Guess a number a number: ");
+      string userGuess = Console.ReadLine();
+      Console.WriteLine($"User guess is {userGuess}");
     }
+  }
 }
