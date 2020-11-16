@@ -13,10 +13,11 @@ namespace GuessingGame
     {
       int sercetNumber = 42;
       int tries = 0;
+      //Give the user four chances to guess the number.
       while (tries < 4)
       {
         tries++;
-        Console.Write("Guess a number a number: ");
+        Console.Write($"Guess a number a number (Your guess {tries}): ");
         string userGuess = Console.ReadLine();
         CheckGuess(sercetNumber, userGuess);
       }
