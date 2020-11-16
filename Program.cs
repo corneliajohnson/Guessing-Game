@@ -15,25 +15,13 @@ namespace GuessingGame
       int tries = 0;
       //set difficulty.
       int difficultyLevel = Difficulty();
-      if (difficultyLevel == 0)
+
+      while (tries < difficultyLevel || difficultyLevel == 0)
       {
-        while (difficultyLevel == 0)
-        {
-          tries++;
-          Console.Write($"Guess a number a number (Your guess {tries}): ");
-          string userGuess = Console.ReadLine();
-          CheckGuess(sercetNumber, userGuess);
-        }
-      }
-      else
-      {
-        while (tries < difficultyLevel)
-        {
-          tries++;
-          Console.Write($"Guess a number a number (Your guess {tries}): ");
-          string userGuess = Console.ReadLine();
-          CheckGuess(sercetNumber, userGuess);
-        }
+        tries++;
+        Console.Write($"Guess a number a number (Your guess {tries}): ");
+        string userGuess = Console.ReadLine();
+        CheckGuess(sercetNumber, userGuess);
       }
     }
 
